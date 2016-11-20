@@ -37,6 +37,7 @@ dist/
 maps/
 public/assets/other/
 public/semantic
+phpmyadmin
 
 # Other #
 #####################
@@ -49,3 +50,5 @@ layout-styles.css
 android/
 gulpfile.js
 bower.json
+info.php
+index.nginx-debian.html
