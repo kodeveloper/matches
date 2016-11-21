@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="allezia.vote.app.android.alleziavote.RegisterPage">
+    <LinearLayout
+        android:layout_gravity="center"
+        android:layout_margin="20dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/userMail"
+            android:padding="15dp"
+            android:textSize="20dp"
+            android:hint="USER EMAIL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:id="@+id/userPassword"
+            android:padding="15dp"
+            android:textSize="20dp"
+            android:hint="USER PASSWORD"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/login"
+            android:layout_marginTop="10dp"
+            android:padding="15dp"
+            android:textSize="20dp"
+            android:text="login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+</FrameLayout>

@@ -161,7 +161,6 @@ public class Database extends SQLiteOpenHelper {
     public void setCurrentCoin(Context context,int coin){
         SharedPreferences pref = context.getSharedPreferences("currentPref",0);
         SharedPreferences.Editor editor = pref.edit();
-        editor.clear();
         editor.putInt("currentCoin",coin);
         editor.commit();
 
@@ -170,6 +169,29 @@ public class Database extends SQLiteOpenHelper {
     public int getCurrent(Context context){
         SharedPreferences pref = context.getSharedPreferences("currentPref",0);
         return pref.getInt("currentCoing",0);
+    }
+
+    public void createPref(Context context ,String key,String value){
+        SharedPreferences pref = context.getSharedPreferences("currentPref",0);
+        SharedPreferences.Editor editor = pref.edit();
+        editor.putString(key,value);
+        System.out.println("prefs :"+pref.getAll());
+        editor.commit();
+    }
+    public void createPref(Context context,String key,int value){
+        SharedPreferences pref = context.getSharedPreferences("currentPref",0);
+        SharedPreferences.Editor editor = pref.edit();
+        editor.putInt(key,value);
+        editor.commit();
+    }
+    public String getPrefString(Context context,String Key){
+        SharedPreferences pref = context.getSharedPreferences("currentPref",0);
+        return pref.getString(Key,"Abdullah");
+    }
+    public int getPrefInt(Context context,String Key){
+        SharedPreferences pref = context.getSharedPreferences("currentPref",0);
+        System.out.println(pref.getAll());
+        return pref.getInt(Key,0);
     }
 
 }

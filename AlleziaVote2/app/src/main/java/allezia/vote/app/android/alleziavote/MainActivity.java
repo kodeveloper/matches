@@ -157,10 +157,6 @@ public class MainActivity extends ActionBarActivity {
                     }else{
                         db.resetTables();
                     }
-
-
-
-
                 }
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -173,7 +169,7 @@ public class MainActivity extends ActionBarActivity {
 
             int id = (int) products.get(listener);
             datas= db.getProduct(id);
-            String link = "http://dfcdn.defacto.com.tr/6/D2956_Z96_14WN_01_01.jpg";
+            String link = datas.get(db.IMAGE);
             Picasso.with(this).
                     load(link).
                     fit().
@@ -182,7 +178,7 @@ public class MainActivity extends ActionBarActivity {
             owner.setText(datas.get(db.OWNER));
             desc.setText(datas.get(db.DESCRIPTION));
             System.out.println(datas);
-            lastCoin+= Integer.parseInt(datas.get(db.COIN));
+            lastCoin = Integer.parseInt(datas.get(db.COIN));
 
             //currentCoin+=datas.get(db.COIN);
             listener++;
@@ -202,7 +198,7 @@ public class MainActivity extends ActionBarActivity {
         db.setCurrentCoin(this,currentCoin);
     }
     public void controlCoin(){
-        int coin = db.getCurrent(this);
+        int coin = db.getPrefInt(this,"coin");
         currentCoin =coin;
     }
 }
