@@ -15,9 +15,6 @@ try{
                     "status" => $status,
                     "coin" => $coin
                 ));
-            print_r($query);
-            if($query)
-                echo "Last Row:" . $db->lastId();
             $query_user_coin = $db->select("users")
                 ->from("coin")
                 ->where("user_id", $user_id)
@@ -28,16 +25,6 @@ try{
                 ->set(array(
                     "coin" => ($coin + $user_earn_coin)
                 ));
-            /* if ($results->rowCount()){
-                $arr = array(
-                    "user_id" => $query[0]["user_id"],
-                    "first_name" => $query[0]["first_name"],
-                    "last_name" => $query[0]["last_name"],
-                    "coin" => $query[0]["coin"]);
-                print_r(json_encode($arr));
-            }
-            else
-                echo "ERROR!";*/
         }
         else
             echo "ERROR!";
