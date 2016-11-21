@@ -18,17 +18,16 @@ try{
                     "first_name" => $query[0]["first_name"],
                     "last_name" => $query[0]["last_name"],
                     "coin" => $query[0]["coin"]);
-                #print_r(json_encode($arr));
-                return json_encode($arr);
+                print_r(json_encode($arr));
             }
             else
-                return "ERROR!";
+                echo "ERROR!";
         }
         else
-            return "ERROR!";
+            echo "ERROR!";
     }
     else
-        return "ERROR!";
+        echo "ERROR!";
 } catch (Exception $e){
     $e->getMessage();
 }
