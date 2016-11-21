@@ -186,7 +186,7 @@ public class Database extends SQLiteOpenHelper {
     }
     public String getPrefString(Context context,String Key){
         SharedPreferences pref = context.getSharedPreferences("currentPref",0);
-        return pref.getString(Key,"Abdullah");
+        return pref.getString(Key,"test");
     }
     public int getPrefInt(Context context,String Key){
         SharedPreferences pref = context.getSharedPreferences("currentPref",0);
